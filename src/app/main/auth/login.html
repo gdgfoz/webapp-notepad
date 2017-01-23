@@ -7,7 +7,7 @@
             </div>
             <form name="loginForm" novalidate>
                 <div class="title">Login</div>
-                
+
                 <md-input-container class="md-block" md-no-float>
                     <input type="email" name="email" ng-model="vm.row.email" placeholder="E-mail"
                            ng-pattern="/^.+@.+\..+$/" required>
@@ -29,7 +29,7 @@
                             <span>Informe a senha</span>
                         </div>
                     </div>
-                      <a ui-sref="remind" class="forgot-password secondary-text link">
+                    <a ui-sref="remind" class="forgot-password secondary-text link">
                         Esqueci a senha</a>
                 </md-input-container>
 
@@ -45,33 +45,32 @@
 
             <div layout="column" layout-align="start center">
                 <md-button class="md-raised google">
-                    <div layout="row" layout-align="center center">
-                        <span>
-                            <md-icon md-font-icon="icon-google-plus" class="s16"></md-icon>
-                            <span>Logar com Google</span>
-                        </span>
-                    </div>
+                    <span>Logar com Google</span>
                 </md-button>
 
                 <md-button class="md-raised facebook">
-                    <div layout="row" layout-align="center center">
-                        <span>
-                            <md-icon md-font-icon="icon-facebook" class="s16"></md-icon>
-                            <span>Logar com Facebook</span>
-                        </span>
-                    </div>
+                    <span>Logar com Facebook</span>
+                </md-button>
+
+                <md-button class="md-raised md-blue-grey-200-bg" ui-sref="app.home">
+                    <span>Usar como anônimo</span>
+                </md-button>
+
+                <div class="pv-24" layout="column" layout-align="center none">
+                    <span class="text" >Ainda não tem cadastro?</span>
+
+                </div>
+                <md-button class="md-raised md-blue-500-bg" ui-sref="singup">
+                    <span class="white-text">Criar conta</span>
                 </md-button>
             </div>
 
-            <div class="register" layout="row" layout-sm="column" layout-align="center center">
-                <span class="text" >Ainda não tem cadastro?</span>
-                <a class="link" ui-sref="singup" >Criar conta</a>
-            </div>
+
         </div>
     </div>
-    
-     <div id="login-intro" flex hide show-gt-sm layout="column " layout-align="center center">
-       
+
+    <div id="login-intro" flex hide show-gt-sm layout="column " layout-align="center center">
+
         <div class="title" >
             Firebase com AngularJs
         </div>

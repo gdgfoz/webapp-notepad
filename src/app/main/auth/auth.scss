@@ -112,10 +112,12 @@
             }
 
             .md-button {
+                width: 70%;
+                text-transform: none;
 
                 &.google,
                 &.facebook {
-                    width: 70%;
+
                     text-transform: none;
                     color: #FFFFFF;
                     font-size: 13px;
