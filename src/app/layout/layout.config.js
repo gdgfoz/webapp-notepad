@@ -6,7 +6,7 @@
             .config(config);
 
     /** @ngInject */
-    function config($mdThemingProvider, gdgScrollConfigProvider) {
+    function config($mdThemingProvider) {
 
         var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {
             'contrastDefaultColor': 'light',
@@ -27,10 +27,6 @@
                 .primaryPalette('grey');
 
 
-        // msScroll configuration
-        gdgScrollConfigProvider.config({
-            wheelPropagation: true
-        });
     }
 
 })();

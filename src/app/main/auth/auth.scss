@@ -1,0 +1,180 @@
+
+
+#login {
+    height: 100%;
+    overflow: hidden;
+    background: url('/assets/images/fundo2.png') no-repeat;
+    background-size: cover;
+
+    #login-intro {
+        /*padding: 36px;*/
+
+        .logo {
+            width: 324px;
+            height: 45px;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .title {
+            font-size: 42px;
+            font-weight: 300;
+        }
+
+    }
+
+    #login-form-wrapper {
+        width: 416px;
+        min-width: 416px;
+        max-width: 416px;
+        height: 100%;
+        background: #FFFFFF;
+
+        #login-form {
+            padding: 24px;
+
+            .logo {
+                width: 324px;
+                height: 45px;
+                margin: 0 auto;
+            }
+
+            .title {
+                font-size: 21px;
+            }
+
+            .description {
+                padding-top: 8px;
+            }
+
+            form {
+                width: 100%;
+                text-align: left;
+                padding-top: 32px;
+
+
+                .remember-forgot-password {
+                    font-size: 13px;
+                    margin-top: 8px;
+
+                    .remember-me {
+                        margin-bottom: 16px
+                    }
+
+                    .forgot-password {
+                        font-size: 13px;
+                        font-weight: 500;
+                        margin-bottom: 16px
+                    }
+                }
+
+                .submit-button {
+                    width: 100%;
+                    margin: 16px auto;
+                    display: block;
+                }
+            }
+
+            .separator {
+                font-size: 15px;
+                font-weight: 600;
+                margin: 24px auto 16px auto;
+                position: relative;
+                overflow: hidden;
+                width: 100px;
+                text-align: center;
+                color: rgba(0, 0, 0, 0.54);
+
+                .text {
+                    display: inline-block;
+                    vertical-align: baseline;
+                    position: relative;
+                    padding: 0 8px;
+                    z-index: 9999;
+
+                    &:before, &:after {
+                        content: '';
+                        display: block;
+                        width: 30px;
+                        position: absolute;
+                        top: 10px;
+                        border-top: 1px solid rgba(0, 0, 0, 0.12);
+                    }
+
+                    &:before {
+                        right: 100%;
+                    }
+
+                    &:after {
+                        left: 100%;
+                    }
+                }
+            }
+
+            .md-button {
+
+                &.google,
+                &.facebook {
+                    width: 70%;
+                    text-transform: none;
+                    color: #FFFFFF;
+                    font-size: 13px;
+
+                    md-icon {
+                        color: #FFFFFF;
+                        margin: 0 8px 0 0;
+                    }
+                }
+
+                &.google {
+                    background-color: #D73D32;
+                }
+
+                &.facebook {
+                    background-color: rgb(63, 92, 154);
+                }
+            }
+
+            .register {
+                margin: 32px auto 24px auto;
+                width: 250px;
+                font-weight: 500;
+
+                .text {
+                    margin-right: 8px;
+                }
+
+                .link {
+
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+@media screen and (max-width: 599px) {
+
+    #login {
+
+        #login-form-wrapper {
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+
+            #login-form {
+                text-align: center;
+                padding: 24px;
+
+                .md-button {
+
+                    &.google,
+                    &.facebook {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+
+}

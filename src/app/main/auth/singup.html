@@ -1,0 +1,80 @@
+<div id="login" layout="row" layout-align="start" flex>
+
+    <div id="login-form-wrapper" class="flex-scrollable md-whiteframe-8dp" ms-scroll>
+        <div id="login-form">
+            <div class="logo md-accent-bg" >
+                <img ng-src="assets/images/gdg-foz.png" />
+            </div>
+            <form name="loginForm" novalidate>
+                <div class="title">Cadastre-se</div>
+                
+                <md-input-container class="md-block" md-no-float>
+                    <input type="text" name="nome" ng-model="vm.row.nome" placeholder="Nome"
+                    required>
+                    <div ng-messages="loginForm.nome.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span>Informe o seu nome</span>
+                        </div>
+                     
+                    </div>
+                </md-input-container>
+                
+                <md-input-container class="md-block" md-no-float>
+                    <input type="email" name="email" ng-model="vm.row.email" placeholder="E-mail"
+                           ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="loginForm.email.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span>Informe o e-mail</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span>E-mail inválido</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="vm.row.password" placeholder="Senha"
+                           required>
+                    <div ng-messages="loginForm.password.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Informe a senha</span>
+                        </div>
+                    </div>
+                </md-input-container>
+                
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password_conf" ng-model="vm.row.password_conf" placeholder="Repita a senha"
+                           required>
+                    <div ng-messages="loginForm.password_conf.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Informe a confirmação de senha</span>
+                        </div>
+                        <div ng-message="vm.row.password_conf != vm.row.password">
+                            <span>As senhas devem ser iguais</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+
+                <md-button ui-sref="login" class="md-raised md-accent submit-button" aria-label="Cadastrar"
+                           ng-disabled="loginForm.$invalid || loginForm.$pristine">
+                    Cadastrar
+                </md-button>
+            </form>
+
+            <div class="register" layout="row" layout-sm="column" layout-align="center center">
+                <a class="link" ui-sref="login" >Voltar ao login</a>
+            </div>
+        </div>
+    </div>
+    
+     <div id="login-intro" flex hide show-gt-sm layout="column " layout-align="center center">
+       
+        <div class="title" >
+            Cadastre-se
+        </div>
+        <div class="description">
+            Faça o seu cadastro para continuar utilizando o sistema.
+        </div>
+    </div>
+</div>

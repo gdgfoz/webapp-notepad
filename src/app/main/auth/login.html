@@ -1,0 +1,82 @@
+<div id="login" layout="row" layout-align="start" flex>
+
+    <div id="login-form-wrapper" class="flex-scrollable md-whiteframe-8dp" ms-scroll>
+        <div id="login-form">
+            <div class="logo md-accent-bg" >
+                <img ng-src="assets/images/gdg-foz.png" />
+            </div>
+            <form name="loginForm" novalidate>
+                <div class="title">Login</div>
+                
+                <md-input-container class="md-block" md-no-float>
+                    <input type="email" name="email" ng-model="vm.row.email" placeholder="E-mail"
+                           ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="loginForm.email.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span>Informe o e-mail</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span>E-mail inválido</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" md-no-float>
+                    <input type="password" name="password" ng-model="vm.row.password" placeholder="Senha"
+                           required>
+                    <div ng-messages="loginForm.password.$error" role="alert">
+                        <div ng-message="required">
+                            <span>Informe a senha</span>
+                        </div>
+                    </div>
+                      <a ui-sref="remind" class="forgot-password secondary-text link">
+                        Esqueci a senha</a>
+                </md-input-container>
+
+                <md-button ui-sref="app.home" class="md-raised md-accent submit-button" aria-label="LOG IN"
+                           ng-disabled="loginForm.$invalid || loginForm.$pristine">
+                    LOGIN
+                </md-button>
+            </form>
+
+            <div class="separator">
+                <span class="text">OU</span>
+            </div>
+
+            <div layout="column" layout-align="start center">
+                <md-button class="md-raised google">
+                    <div layout="row" layout-align="center center">
+                        <span>
+                            <md-icon md-font-icon="icon-google-plus" class="s16"></md-icon>
+                            <span>Logar com Google</span>
+                        </span>
+                    </div>
+                </md-button>
+
+                <md-button class="md-raised facebook">
+                    <div layout="row" layout-align="center center">
+                        <span>
+                            <md-icon md-font-icon="icon-facebook" class="s16"></md-icon>
+                            <span>Logar com Facebook</span>
+                        </span>
+                    </div>
+                </md-button>
+            </div>
+
+            <div class="register" layout="row" layout-sm="column" layout-align="center center">
+                <span class="text" >Ainda não tem cadastro?</span>
+                <a class="link" ui-sref="singup" >Criar conta</a>
+            </div>
+        </div>
+    </div>
+    
+     <div id="login-intro" flex hide show-gt-sm layout="column " layout-align="center center">
+       
+        <div class="title" >
+            Firebase com AngularJs
+        </div>
+        <div class="description">
+            Bem vindo ao curso introdutório de Firebase com AngularJs, nesta aplicação exploramos os recursos do Firebase: Auth, Database e Hosting.
+        </div>
+    </div>
+</div>

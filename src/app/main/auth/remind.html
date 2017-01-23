@@ -1,0 +1,52 @@
+<div id="login" layout="row" layout-align="start" flex>
+
+    <div id="login-form-wrapper" class="flex-scrollable md-whiteframe-8dp" ms-scroll>
+        <div id="login-form">
+            <div class="logo md-accent-bg" >
+                <img ng-src="assets/images/gdg-foz.png" />
+            </div>
+            <form name="loginForm" novalidate>
+                <div class="title">Recuperar senha</div>
+                
+                <md-input-container class="md-block" md-no-float>
+                    <input type="email" name="email" ng-model="vm.row.email" placeholder="E-mail"
+                           ng-pattern="/^.+@.+\..+$/" required>
+                    <div ng-messages="loginForm.email.$error" role="alert" multiple>
+                        <div ng-message="required">
+                            <span>Informe o e-mail</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span>E-mail inválido</span>
+                        </div>
+                    </div>
+                </md-input-container>
+
+
+              
+<!--                <md-button type="submit" class="md-raised md-accent submit-button" aria-label="send"
+                           ng-disabled="loginForm.$invalid || loginForm.$pristine">
+                    Enviar
+                </md-button>-->
+                <md-button ui-sref="reset" class="md-raised md-accent submit-button" aria-label="send"
+                           ng-disabled="loginForm.$invalid || loginForm.$pristine">
+                    Enviar
+                </md-button>
+            </form>
+
+            
+            <div class="register" layout="row" layout-sm="column" layout-align="center center">
+                <a class="link" ui-sref="login" >Voltar</a>
+            </div>
+        </div>
+    </div>
+    
+     <div id="login-intro" flex hide show-gt-sm layout="column " layout-align="center center">
+       
+        <div class="title" >
+            Recuperar senha
+        </div>
+        <div class="description">
+            Preencha o seu endereço de e-mail que estaremos lhe enviando as instruções para recuperação de senha.
+        </div>
+    </div>
+</div>
