@@ -1,5 +1,5 @@
 <md-card flex-gt-sm="90" flex-gt-md="80" class="notes">
-    <md-card-title class="p-16 h-75" layout="row">
+    <md-card-title class="p-16" layout="column" layout-gt-xs="row">
         <md-card-title-text>
             <md-input-container class="no-margin">
                 <input class="md-headline" ng-model="vm.row.title" />
@@ -12,7 +12,7 @@
         </md-input-container>
 
 
-        <md-fab-speed-dial md-open="false" md-direction="down" class="md-scale" aria-label="menu" >
+        <md-fab-speed-dial md-open="false" md-direction="down" class="md-scale" aria-label="menu" hide-xs hide-sm >
             <md-fab-trigger>
                 <md-button aria-label="menu" class="md-icon-button md-warn">
                     <md-icon class="material-icons">more_vert</md-icon>
