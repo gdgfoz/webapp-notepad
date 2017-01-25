@@ -44,15 +44,16 @@
             </div>
 
             <div layout="column" layout-align="start center">
-                <md-button class="md-raised google">
+                
+<!--                <md-button class="md-raised google">
                     <span>Logar com Google</span>
-                </md-button>
+                </md-button>-->
 
-                <md-button class="md-raised facebook">
+                <md-button ng-click="vm.authFacebook()" class="md-raised facebook">
                     <span>Logar com Facebook</span>
                 </md-button>
 
-                <md-button class="md-raised md-blue-grey-200-bg" ui-sref="app.notes_new">
+                <md-button ng-click="vm.authAnonymous()" class="md-raised md-blue-grey-200-bg">
                     <span>Usar como anônimo</span>
                 </md-button>
 
@@ -72,10 +73,11 @@
     <div id="login-intro" flex hide show-gt-sm layout="column " layout-align="center center">
 
         <div class="title" >
-            Firebase com AngularJs
+            Notepad GDG Foz do Iguaçu
         </div>
-        <div class="description">
-            Bem vindo ao curso introdutório de Firebase com AngularJs, nesta aplicação exploramos os recursos do Firebase: Auth, Database e Hosting.
+        <div class="description">            
+            Salve suas notas de maneira rápida com Notepad GDG. <br />
+            Hangout de introdução Firebase com AngularJs.
         </div>
     </div>
 </div>

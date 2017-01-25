@@ -11,16 +11,14 @@
 
         /* jshint validthis:true */
         var vm = this;
-        
+
         //DATA
 
 
         activate();
-
-        function activate() {
-  
-
-            vm.alert = '';
+        
+        function activate()
+        {
         }
 
     }
@@ -37,25 +35,25 @@
 //            $mdDialog.hide(answer);
 //        };
 //    }
-        /** @ngInject */
+    /** @ngInject */
     function NotesFormController($scope) {
-        
+
         /* jshint validthis:true */
         var vm = this;
-        
+
         //DATA
         vm.title = '';
         vm.row = {
-            'title' : 'Notepad',
-            'url' : 'https://notepad.pw/share/mt2rc9eh'
+            'title': 'Notepad',
+            'url': 'https://notepad-42e36.firebaseapp.com/share/mt2rc9eh'
         };
 
         activate();
 
         function activate() {
-            
+
         }
 
-  
+
     }
 })();

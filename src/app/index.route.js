@@ -6,51 +6,32 @@
             .config(routerConfig);
 
     /** @ngInject */
-    function routerConfig($stateProvider, $urlRouterProvider) {
+    function routerConfig($locationProvider, $stateProvider, $urlRouterProvider) {
 
+        // This is in your app module config.
+        $locationProvider.html5Mode(true);
+
+        /*
+         * MAIN ROUTES
+         */
         $stateProvider
-                /*
-                 * AUTH ROUTES
-                 */
-                .state('login', {
-                    url: '/login',
+                .state('app.home', {
+                    url: '/home',
                     views: {
-                        'main@': {
-                            templateUrl: 'app/main/auth/login.html',
-                            controller: 'LoginController as vm'
+                        'content@app': {
+                            controller: 'IndexController as vm'
                         }
+                    },
+                    resolve: {
+                        // controller will not be loaded until $requireSignIn resolves
+                        // Auth refers to our $firebaseAuth wrapper in the factory below
+                        "currentAuth": ["Auth", function (Auth) {
+                                // $requireSignIn returns a promise so the resolve waits for it to complete
+                                // If the promise is rejected, it will throw a $stateChangeError (see above)
+                                return Auth.$firebase.$requireSignIn();
+                            }]
                     }
                 })
-                .state('remind', {
-                    url: '/recuperar-senha',
-                    views: {
-                        'main@': {
-                            templateUrl: 'app/main/auth/remind.html',
-                            controller: 'LoginController as vm'
-                        }
-                    }
-                })
-                .state('reset', {
-                    url: '/criar-nova-senha',
-                    views: {
-                        'main@': {
-                            templateUrl: 'app/main/auth/reset.html',
-                            controller: 'LoginController as vm'
-                        }
-                    }
-                })
-                .state('singup', {
-                    url: '/cadastro',
-                    views: {
-                        'main@': {
-                            templateUrl: 'app/main/auth/singup.html',
-                            controller: 'LoginController as vm'
-                        }
-                    }
-                })
-                /*
-                 * MAIN ROUTES
-                 */
                 .state('app.notes', {
                     url: '/notes',
                     views: {
@@ -58,7 +39,8 @@
                             templateUrl: 'app/main/note/archive-note.html',
                             controller: 'NotesController as vm'
                         }
-                    }
+                    },
+                    AUTH_REQUIRED: true
                 })
                 .state('app.notes_new', {
                     url: '/novo',
@@ -67,7 +49,8 @@
                             templateUrl: 'app/main/note/form-note.html',
                             controller: 'NotesFormController as vm'
                         }
-                    }
+                    },
+                    AUTH_REQUIRED: true
                 })
                 .state('app.notes_edit', {
                     url: '/url',
@@ -76,10 +59,11 @@
                             templateUrl: 'app/main/note/form-note.html',
                             controller: 'NotesFormController as vm'
                         }
-                    }
+                    },
+                    AUTH_REQUIRED: true
                 });
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/home');
 
     }
 
