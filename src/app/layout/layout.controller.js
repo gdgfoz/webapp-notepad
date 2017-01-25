@@ -88,22 +88,31 @@
     }
 
     /** @ngInject */
-    function TemplateController($scope, $mdSidenav) {
+    function TemplateController($scope, $mdSidenav, $state) {
 
         var vm = this;
         
         //DATA
         vm.profile = {};
+        vm.showSearch = false;
         var defaultProfile = {
             'name' : 'Usuário anônimo',
             'email' : null,
             'thumb_src' : 'assets/images/profile.jpg'
         };
+        
+        //MEHTODS
+        vm.goTo = goTo;
 
         activate();
 
         function activate() {
             vm.profile = defaultProfile;
+        }
+        
+        function goTo(url) {
+            $state.go(url);
+            $scope.toggleSidenav('left');
         }
 
         $scope.toggleSidenav = function (menuId) {
