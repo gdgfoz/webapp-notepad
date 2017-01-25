@@ -13,30 +13,35 @@
         var vm = this;
         
         //DATA
-
+        vm.archive = [];
 
         activate();
 
         function activate() {
-  
+            loadResource();
 
             vm.alert = '';
+        }
+        
+        function loadResource() {
+            vm.archive = [
+                {
+                    'id': 1,
+                    'title' : 'Nota 1',
+                    'url' : 'kfjlskjfkdls',
+                    'updated_at' : '12/12/2016'
+                },
+                {
+                    'id': 1,
+                    'title' : 'Nota 1',
+                    'url' : 'kfjlskjfkdls',
+                    'updated_at' : '12/12/2016'
+                }
+            ]
         }
 
     }
 
-    /** @ngInject */
-//    function DialogController($scope, $mdDialog) {
-//        $scope.hide = function () {
-//            $mdDialog.hide();
-//        };
-//        $scope.cancel = function () {
-//            $mdDialog.cancel();
-//        };
-//        $scope.answer = function (answer) {
-//            $mdDialog.hide(answer);
-//        };
-//    }
         /** @ngInject */
     function NotesFormController($scope) {
         

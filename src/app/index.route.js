@@ -70,7 +70,7 @@
                     }
                 })
                 .state('app.notes_edit', {
-                    url: '/url',
+                    url: '/{url}',
                     views: {
                         'content@app': {
                             templateUrl: 'app/main/note/form-note.html',
