@@ -1,0 +1,37 @@
+<md-card flex-gt-sm="90" flex-gt-md="80">
+    <md-card-title class="p-16 h-75" layout="row">
+        <md-card-title-text>
+            <md-input-container class="no-margin">
+                <input class="md-headline" ng-model="vm.row.title" />
+            </md-input-container>
+        </md-card-title-text>
+        <span flex></span>
+        <span class="secondary-text mt-8">Compartilhar:</span>
+        <md-input-container class="no-margin">
+            <input class="w-280" ng-model="vm.row.url" aria-label="compartilhar"/>
+        </md-input-container>
+
+
+        <md-fab-speed-dial md-open="false" md-direction="down" class="md-scale" aria-label="menu" >
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-icon-button md-warn">
+                    <md-icon class="material-icons">more_vert</md-icon>
+                </md-button>
+            </md-fab-trigger>
+
+            <md-fab-actions>
+                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                    <md-icon class="material-icons">add_circle</md-icon>
+                    <md-tooltip md-direction="right">Novo</md-tooltip>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+
+    </md-card-title>
+    <md-card-content>
+        <md-input-container class="md-block">
+            <textarea ng-model="vm.row.note" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+     
+    </md-card-content>
+</md-card>

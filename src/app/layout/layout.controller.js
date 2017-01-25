@@ -91,12 +91,19 @@
     function TemplateController($scope, $mdSidenav) {
 
         var vm = this;
-
+        
+        //DATA
+        vm.profile = {};
+        var defaultProfile = {
+            'name' : 'Usuário anônimo',
+            'email' : null,
+            'thumb_src' : 'assets/images/profile.jpg'
+        };
 
         activate();
 
         function activate() {
-
+            vm.profile = defaultProfile;
         }
 
         $scope.toggleSidenav = function (menuId) {

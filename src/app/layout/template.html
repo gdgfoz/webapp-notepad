@@ -1,55 +1,60 @@
 
-<md-sidenav layout="column" id="sidenav" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-    <md-toolbar class="md-tall md-hue-2">
-        <span flex></span>
-        <div layout="column" class="md-toolbar-tools-bottom inset">
-            <user-avatar></user-avatar>
-            <span></span>
-            <div>Firstname Lastname</div>
-            <div>email@domainname.com</div>
+<md-sidenav layout="column" id="sidenav" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-lg')">
+    <md-toolbar class="md-tall md-hue-2" layout="column" layout-align="center start ">
+        <div layout="row" class="md-toolbar-tools-bottom inset">
+            <div class="avatar w-60 h-60">
+                <img ng-src="{{vm.profile.thumb_src}}" />
+            </div>
+            <div flex class="pl-8" layout="column" layout-align="center start ">
+                <div>{{vm.profile.name}}</div>
+                <div ng-if="vm.profile.email">{{vm.profile.email}}</div>
+            </div>
         </div>
     </md-toolbar>
     <md-list>
-        <md-item ng-repeat="item in menu">
-            <a>
-                <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                    <div class="inset">
-                        <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
-                    </div>
-                    <div class="inset">{{item.title}}
-                    </div>
-                </md-item-content>
-            </a>
+        <!--        <md-item ng-repeat="item in menu">
+                    <a>
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+                            </div>
+                            <div class="inset">{{item.title}}
+                            </div>
+                        </md-item-content>
+                    </a>
+                </md-item>
+                <md-divider></md-divider>
+                <md-subheader>Management</md-subheader>-->
+        <md-item class="pointer" ui-sref="app.notes_new">
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <md-icon class="material-icons">add_circle</md-icon>
+                </div>
+                <div class="inset">Nova nota
+                </div>
+            </md-item-content>
         </md-item>
-        <md-divider></md-divider>
-        <md-subheader>Management</md-subheader>
-        <md-item ng-repeat="item in admin">
-            <a>
-                <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                    <div class="inset">
-                        <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
-                    </div>
-                    <div class="inset">{{item.title}}
-                    </div>
-                </md-item-content>
-            </a>
+        <md-item class="pointer" ui-sref="app.notes">
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <md-icon class="material-icons">speaker_notes</md-icon>
+                </div>
+                <div class="inset">Todas as notas
+                </div>
+            </md-item-content>
         </md-item>
     </md-list>
-    
-    <ul>
-        <li class="collapsed">
-            <div  layout="row" >
+    <span flex></span>
+    <md-divider></md-divider>
+    <div class="p-16" layout="column">
+        <span class="secondary-text">Para poder salvar seus notes e ver outros notes salvos acesse a sua conta.</span>
+        <md-button class="md-accent md-raised" ui-sref="login">Ir para login</md-button>
 
-                <a class="ms-navigation-button" ui-sref="app.home" >
-                     <md-icon class="material-icons">more_vert</md-icon>
-                    <span class="title" flex>LALALALAL</span>
-<!--                    <span class="badge white-fg" ng-style="{'background': node.badge.color}" ng-if="node.badge">{{node.badge.content}}</span>
-                    <i class="icon-chevron-right s16 arrow" ng-if="vm.collapsable && vm.hasChildren"></i>-->
-                </a>
+        <span class="secondary-text mt-16">Ainda não é cadastrado?</span>
+        <md-button class="md-primary md-raised"  ui-sref="singup">Criar conta</md-button>
+    </div>
 
-            </div>
-        </li>
-    </ul>
+
 </md-sidenav>
 
 

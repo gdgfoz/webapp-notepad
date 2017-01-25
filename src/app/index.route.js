@@ -51,21 +51,30 @@
                 /*
                  * MAIN ROUTES
                  */
-                .state('app.home', {
-                    url: '/',
+                .state('app.notes', {
+                    url: '/notes',
                     views: {
                         'content@app': {
-                            templateUrl: 'app/main/home/home.html',
-                            controller: 'HomeController as vm'
+                            templateUrl: 'app/main/note/archive-note.html',
+                            controller: 'NotesController as vm'
                         }
                     }
                 })
-                .state('app.home2', {
-                    url: '/home-2',
+                .state('app.notes_new', {
+                    url: '/novo',
                     views: {
                         'content@app': {
-                            templateUrl: 'app/main/home/home-2.html',
-                            controller: 'HomeController as vm'
+                            templateUrl: 'app/main/note/form-note.html',
+                            controller: 'NotesFormController as vm'
+                        }
+                    }
+                })
+                .state('app.notes_edit', {
+                    url: '/url',
+                    views: {
+                        'content@app': {
+                            templateUrl: 'app/main/note/form-note.html',
+                            controller: 'NotesFormController as vm'
                         }
                     }
                 });
