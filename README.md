@@ -1,55 +1,56 @@
+![Banner](docs/banner.png)
 
-![GitHub Logo](/images/logo.png)
+# Sobre
+## Projeto
+Nosso objetivo é criar uma série de vídeos tutoriais sobre Angular Firebase utilizando como exemplo o webapp notepad para gerenciar bloco de notas de forma que este esteja o mais próximo possível de um produto em produção. Acompanhe os hangouts passo a passo do desenvolvimento do webapp.
 
-## Usage
+## Contribuição
+Esperamos que o projeto possa servir como referencia de estudo, e modelo de inicialização para seus projetos. Por isso contamos com sua contribuição, para poder evoluir este projeto.
 
-More informations, options, parameters in the [usage documentation page](docs/usage.md)
+### Como ajudar?
+- Testando e reportando problemas
+- Documentando
+- Enviando pull-requests
+- Apresentando hangouts implementando uma nova feature ao projeto
+- Enviando duvidas
+- Divulgando
+- ...
 
-### Install
+## Demo
+Deploy feito no firebase, para testar acesse: https://notepad-42e36.firebaseapp.com
 
-##### Install required tools `yo`, `gulp` and `bower`:
-```
-npm install -g yo gulp bower
-```
+# Como usar
 
-##### Install `generator-gulp-angular`:
-```
-npm install -g generator-gulp-angular
-```
+Para mais informações sobre como rodar o projeto em sua maquina, siga nosso [guia de instação](docs/usage.md)
 
-
-### Run
-
-##### Create a new directory, and go into:
-```
-mkdir my-new-project && cd $_
-```
-
-##### Run `yo gulp-angular`, and select desired technologies:
-```
-yo gulp-angular
-```
 
 
 # Features
-- Deploy with Hosting Firebase
-- Deploy with Hosting Firebase
+> A baixo está nosso backlogs de algumas coisas que pretendemos implementar. Caso tenha alguma sugestão, favor abrir uma ISSUES.
+
+## Em desenvolvimento
+- Auth Firebase
+- Salvar notes no database Firebase
+
+## Para implementar
+- Service worker
+- make webapp
+- Offline
+- Notifications
 
 
-# To Do
-- 
+# Links úteis
 
-
-# Using
+## Blibliotecas utilizadas
 - https://github.com/Swiip/generator-gulp-angular
 - https://github.com/firebase/angularfire
 - https://github.com/klarsys/angular-material-icons
 - https://github.com/angular/material/tree/v1.1.1
 - https://github.com/angular/angular.js
 
-# Reference
-- [API AngularFire] (https://github.com/firebase/angularfire/blob/master/docs/reference.md#signinwithpopupprovider)
-- [Angular 1 Style Guide] (https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/pt-BR.md)
-- [Authenticating With UI Router] (https://github.com/firebase/angularfire/blob/master/docs/guide/user-auth.md#ui-router-example)
-- [Install generator-gulp-angular] (https://github.com/Swiip/generator-gulp-angular)
-- [Guide Gulp Angular] (http://www.matera.com/br/2016/01/01/yeoman)
+## Referências
+- [API AngularFire](https://github.com/firebase/angularfire/blob/master/docs/reference.md#signinwithpopupprovider)
+- [Angular 1 Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/i18n/pt-BR.md)
+- [Authenticating With UI Router](https://github.com/firebase/angularfire/blob/master/docs/guide/user-auth.md#ui-router-example)
+- [Install generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular)
+- [Guide Gulp Angular](http://www.matera.com/br/2016/01/01/yeoman)
