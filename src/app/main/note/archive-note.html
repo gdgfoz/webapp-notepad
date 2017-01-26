@@ -1,7 +1,7 @@
 <md-card flex-gt-sm="90" flex-gt-md="80">
     <md-card-title class="p-16 h-75" layout="row">
         <md-card-title-text>
-             <span class="md-headline secondary-text">Gerenciar notas que você já criou</span>
+             <span class="md-headline secondary-text">Minhas notas</span>
         </md-card-title-text>
         <md-button class="md-icon-button" ui-sref="app.notes_new"  aria-label="menu" >
             <md-icon class="material-icons">add_circle</md-icon>
@@ -14,17 +14,17 @@
             <table flex class="table table-hover">
                 <thead>
                     <tr>
-                        <th>URL</th>
                         <th>Título</th>
                         <th>Atualizado</th>
+                         <th>URL</th>
                         <th class="w-50">Opções</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>dd</td>
-                        <td>dd</td>
-                        <td>dd</td>
+                    <tr ng-repeat="item in vm.archive">
+                        <td>{{item.title}}</td>
+                        <td>{{item.updated_at}}</td>
+                        <td>{{item.url}}</td>
                         <td class="w-50">
                             <md-menu>
                                 <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
@@ -32,7 +32,7 @@
                                 </md-button>
                                 <md-menu-content width="3">
                                     <md-menu-item>
-                                        <md-button ng-click="ctrl.redial($event)">
+                                        <md-button ui-sref="app.notes_edit({'url':item.url})">
                                             <md-icon class="material-icons">create</md-icon>
                                             Editar
                                         </md-button>

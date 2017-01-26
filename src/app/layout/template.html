@@ -12,20 +12,7 @@
         </div>
     </md-toolbar>
     <md-list>
-        <!--        <md-item ng-repeat="item in menu">
-                    <a>
-                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                            <div class="inset">
-                                <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
-                            </div>
-                            <div class="inset">{{item.title}}
-                            </div>
-                        </md-item-content>
-                    </a>
-                </md-item>
-                <md-divider></md-divider>
-                <md-subheader>Management</md-subheader>-->
-        <md-item class="pointer" ui-sref="app.notes_new">
+        <md-item class="pointer" ng-click="vm.goTo('app.notes_new')">
             <md-item-content md-ink-ripple layout="row" layout-align="start center">
                 <div class="inset">
                     <md-icon class="material-icons">add_circle</md-icon>
@@ -34,7 +21,7 @@
                 </div>
             </md-item-content>
         </md-item>
-        <md-item class="pointer" ui-sref="app.notes">
+        <md-item class="pointer" ng-click="vm.goTo('app.notes')">
             <md-item-content md-ink-ripple layout="row" layout-align="start center">
                 <div class="inset">
                     <md-icon class="material-icons">speaker_notes</md-icon>
@@ -47,7 +34,7 @@
     <span flex></span>
     <md-divider></md-divider>
     <div class="p-16" layout="column">
-        <span class="secondary-text">Para poder salvar seus notes e ver outros notes salvos acesse a sua conta.</span>
+        <span class="secondary-text">Para poder salvar suas notas e ver outras notas salvos acesse a sua conta.</span>
         <md-button class="md-accent md-raised" ui-sref="login">Ir para login</md-button>
 
         <span class="secondary-text mt-16">Ainda não é cadastrado?</span>

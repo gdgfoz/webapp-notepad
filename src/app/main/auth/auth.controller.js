@@ -1,33 +1,47 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('notepadDemo')
-    .controller('LoginController', LoginController);
+    angular
+            .module('notepadDemo.auth')
+            .controller('LoginController', LoginController);
 
 
-  /** @ngInject */
-  function LoginController($location) {
+    /** @ngInject */
+    function LoginController($state, Auth) {
 
-    var vm = this;
-    vm.user = {};
+        var vm = this;
 
-    vm.login = login;
+        // Data
+        vm.user = {};
 
-    activate();
+        // Methods
+        vm.authFacebook = authFacebook;
+        vm.authAnonymous = authAnonymous;
 
-    //--------------------- Functions
-    function login()
-    {
-//        Auth.login(vm.user).then(function(isAuth){
-//          if(isAuth) $location.url('posts');
-//        });
+        //--------------------- Functions
+        function authSuccess()
+        {
+            $state.go('app.notes_new');
+        }
+
+        function authAnonymous()
+        {
+            Auth.signInAnonymous()
+                    .then(authSuccess)
+                    .catch(function (error) {
+                        console.log("Authentication failed:", error);
+                    });
+        }
+
+        function authFacebook()
+        {
+            Auth.signInFacebook()
+                    .then(authSuccess)
+                    .catch(function (error) {
+                        console.log("Authentication failed:", error);
+                    });
+        }
+
     }
-
-    function activate() {
-
-    }
-
-  }
 
 })();

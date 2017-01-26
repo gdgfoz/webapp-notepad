@@ -1,0 +1,21 @@
+{
+    "name": "Notepad GDG",
+    "short_name": "TXT Clipboard",
+    "description": "Generate notes",
+    "lang": "pt-BR",
+    "scope": "/",
+    "start_url": "/?lauch=true",
+    "display": "fullscreen",
+    "orientation": "any",
+    "theme_color": "#f05a28",
+    "background_color": "#2196f3",
+    "icons": [{
+        "src": "/icons/apple-touch-icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }, {
+        "src": "/icons/apple-touch-icon-152x152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+    }]
+}

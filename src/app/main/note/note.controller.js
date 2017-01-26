@@ -11,51 +11,54 @@
 
         /* jshint validthis:true */
         var vm = this;
-        
+
         //DATA
+        vm.archive = [];
 
+        function activate()
+        {
+            loadResource();
 
-        activate();
+        }
 
-        function activate() {
-  
-
-            vm.alert = '';
+        function loadResource() {
+            vm.archive = [
+                {
+                    'id': 1,
+                    'title': 'Nota 1',
+                    'url': 'kfjlskjfkdls',
+                    'updated_at': '12/12/2016'
+                },
+                {
+                    'id': 1,
+                    'title': 'Nota 1',
+                    'url': 'kfjlskjfkdls',
+                    'updated_at': '12/12/2016'
+                }
+            ]
         }
 
     }
 
     /** @ngInject */
-//    function DialogController($scope, $mdDialog) {
-//        $scope.hide = function () {
-//            $mdDialog.hide();
-//        };
-//        $scope.cancel = function () {
-//            $mdDialog.cancel();
-//        };
-//        $scope.answer = function (answer) {
-//            $mdDialog.hide(answer);
-//        };
-//    }
-        /** @ngInject */
     function NotesFormController($scope) {
-        
+
         /* jshint validthis:true */
         var vm = this;
-        
+
         //DATA
         vm.title = '';
         vm.row = {
-            'title' : 'Notepad',
-            'url' : 'https://notepad.pw/share/mt2rc9eh'
+            'title': 'Notepad',
+            'url': 'https://notepad-42e36.firebaseapp.com/share/mt2rc9eh'
         };
 
         activate();
 
         function activate() {
-            
+
         }
 
-  
+
     }
 })();
